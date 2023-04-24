@@ -7,10 +7,6 @@ exports.getTest = (req, res, next)=>{
 exports.postTest = (req, res, next)=>{
 
     const {email, name, mdp} = req.body;
-
-    console.log('email : ' + email )    
-    console.log('nom : ' + name )
-    console.log('mdp : ' + mdp )
     const cour = new Cour({
         email:  email,
         name:   name,
@@ -19,11 +15,17 @@ exports.postTest = (req, res, next)=>{
 
     cour.save()
         .then((result) => {
+            console.log('email : ' + email )    
+            console.log('nom : ' + name )
+            console.log('mdp : ' + mdp )
+
+
             id = result.id
             res.redirect(`/user/${id}`)
         })
         .catch((err) =>{
-            console.log(err)
+            console.log('erreur lors de la création du compte')
+            res.send('Erreur :/' + err + '<a href="/">Revenir au menu d\'inscription</a>')
         })
     
 }
