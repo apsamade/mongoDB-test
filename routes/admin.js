@@ -1,5 +1,4 @@
 const express = require('express')
-const Cour = require('../models/cour')
 
 const router = express.Router();
 const adminController = require('../controller/admin')

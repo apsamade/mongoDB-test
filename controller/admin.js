@@ -1,5 +1,5 @@
 const { get } = require('mongoose');
-const Cour = require('../models/cour')
+const User = require('../models/user')
 /////////////////////////////////// inscription 
 exports.getTest = (req, res, next)=>{
     res.render('test')
@@ -7,13 +7,13 @@ exports.getTest = (req, res, next)=>{
 exports.postTest = (req, res, next)=>{
 
     const {email, name, mdp} = req.body;
-    const cour = new Cour({
+    const user = new User({
         email:  email,
         name:   name,
         mdp:    mdp
     });
 
-    cour.save()
+    user.save()
         .then((result) => {
             console.log('email : ' + email )    
             console.log('nom : ' + name )
@@ -32,7 +32,7 @@ exports.postTest = (req, res, next)=>{
 /////////////////////////////////// user 
 exports.getUser = (req, res, next)=>{
     const userId = req.params.id;
-    Cour.findById(userId)
+    User.findById(userId)
         .then((result) => {
             console.log(result)
             res.render('user', {result: result})
@@ -54,7 +54,7 @@ exports.postTestCo = (req, res, next)=>{
     console.log('email : ' + email )    
     console.log('mdp : ' + mdp )
 
-    Cour.find()
+    User.find()
         .then((result) => {             
                 for(let i = 0; i<result.length; i++){
                     console.log(i)
