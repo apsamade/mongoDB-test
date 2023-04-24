@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="shortcut icon" href="../public/img/mongodb-logo.webp" type="image/x-icon">
+</head>
+<body>
+    <section>
+        <h1>Bienvenue : {{ result.name }}</h1>
+        <div>
+            <h2>Voici Quelque infos te concernant : {{ result.name }}</h2>
+            <p>Ton mail :<span> {{ result.email }} </span></p>
+            <p>Ton nom :<span> {{ result.name }} </span></p>
+            <p>Ton mot de passe :<span> {{ result.mdp }} </span></p>
+            <div class="flex">
+                <a href="/"><input type="submit" value="Revenir au menu d'Inscription"></a>
+                <a href="/connexion"><input type="submit" value="Revenir au menu de Connexion"></a>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
