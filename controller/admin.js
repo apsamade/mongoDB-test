@@ -1,6 +1,6 @@
 const { get } = require('mongoose');
 const Cour = require('../models/cour')
-
+/////////////////////////////////// inscription 
 exports.getTest = (req, res, next)=>{
     res.render('test')
 }
@@ -27,7 +27,7 @@ exports.postTest = (req, res, next)=>{
         })
     
 }
-// user 
+/////////////////////////////////// user 
 exports.getUser = (req, res, next)=>{
     const userId = req.params.id;
     Cour.findById(userId)
@@ -42,7 +42,7 @@ exports.getUser = (req, res, next)=>{
 exports.postUser = (req, res, next)=>{
 
 }
-// connexion
+/////////////////////////////////// connexion
 exports.getTestCo = (req, res, next)=>{
     res.render('testCo')
 }
