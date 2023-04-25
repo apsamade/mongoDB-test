@@ -33,6 +33,7 @@ input[type=submit]{
     transition: 0.5s;
     cursor: pointer;
     height: 55px;
+    box-shadow: 0px 0px 10px 0 black;
 }
 input[type=submit]:hover{
     width: 45%;

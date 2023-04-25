@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Joi = require('joi');
 const validator = require("validator");
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt')
 
 // ce schema sert a definir la structure de nos document
 const userSchema = new mongoose.Schema({
@@ -37,6 +38,12 @@ const userSchema = new mongoose.Schema({
   }, { timestamps: true });
   
 // timestamps est une fonction qui va permettre de horodoter nos document (c'est a dire à jouter a un mecanisme une valeur horaire)
-
+userSchema.pre('save', async function(next) {
+  const user = this;
+  if (!user.isModified('mdp')) return next();
+  const hash = await bcrypt.hash(user.mdp, 10);
+  user.mdp = hash;
+  next();
+});
 const User = mongoose.model('Cour', userSchema)
 module.exports = User;
