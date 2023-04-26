@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 3000
 
 // connect to mongoDB
 const dbURI = process.env.dbURI
+const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoDB-test";
+
 
 mongoose.connect(`mongodb+srv://${dbURI}`, {
     useNewUrlParser: true,
