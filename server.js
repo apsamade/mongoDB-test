@@ -9,18 +9,18 @@ const PORT = process.env.PORT || 3000
 
 
 // connect to mongoDB
-const dbURI = process.env.dbURI
+// const dbURI = process.env.dbURI
 
-mongoose.connect(`mongodb+srv://${dbURI}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }).then(() => {
-    console.log('Connexion à la base de données réussie !');
+// mongoose.connect(`mongodb+srv://${dbURI}`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   }).then(() => {
+//     console.log('Connexion à la base de données réussie !');
     
-  }).catch((err) => {
-    console.log(`Echec de la connexion : ${err}`);
-  });
-// si la connexion à la base de donné fonctionne alors on lance le serveru sinon on log l'erreur
+//   }).catch((err) => {
+//     console.log(`Echec de la connexion : ${err}`);
+//   });
+// // si la connexion à la base de donné fonctionne alors on lance le serveru sinon on log l'erreur
 
 
 // partie app
