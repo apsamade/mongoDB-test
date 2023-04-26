@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://cours-test:7dtfj2xgKJXFLd1E@bouderga.el84tpe.mon
     useUnifiedTopology: true
   }).then(() => {
     console.log('Connexion à la base de données réussie !');
-    app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT}`)})
+    
   }).catch((err) => {
     console.log(`Echec de la connexion : ${err}`);
   });
@@ -32,3 +32,4 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(adminRoutes)
+app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT}`)})
