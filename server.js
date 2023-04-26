@@ -16,7 +16,6 @@ mongoose.connect(`mongodb+srv://${dbURI}`, {
     useUnifiedTopology: true
   }).then(() => {
     console.log('Connexion à la base de données réussie !');
-    
   }).catch((err) => {
     console.log(`Echec de la connexion : ${err}`);
   });
