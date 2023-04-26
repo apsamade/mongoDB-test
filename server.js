@@ -5,13 +5,13 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const adminRoutes = require('./routes/admin')
 require('dotenv').config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 
 // connect to mongoDB
 const dbURI = process.env.dbURI
 
-mongoose.connect('mongodb+srv://cours-test:7dtfj2xgKJXFLd1E@bouderga.el84tpe.mongodb.net/test_mongo?retryWrites=true&w=majority', {
+mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
