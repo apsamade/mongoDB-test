@@ -9,18 +9,22 @@ const PORT = process.env.PORT || 3000
 
 
 // connect to mongoDB
-// const dbURI = process.env.dbURI
-
-// mongoose.connect(`mongodb+srv://${dbURI}`, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   }).then(() => {
-//     console.log('Connexion à la base de données réussie !');
+const dbURI = process.env.dbURI
+app.use((req, res, next) => {
+  const ip = req.ip || req.connection.remoteAddress;
+  req.clientIP = ip;
+  next();
+});
+mongoose.connect(`mongodb+srv://${dbURI}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(() => {
+    console.log('Connexion à la base de données réussie !');
     
-//   }).catch((err) => {
-//     console.log(`Echec de la connexion : ${err}`);
-//   });
-// // si la connexion à la base de donné fonctionne alors on lance le serveru sinon on log l'erreur
+  }).catch((err) => {
+    console.log(`Echec de la connexion : ${err}`);
+  });
+// si la connexion à la base de donné fonctionne alors on lance le serveru sinon on log l'erreur
 
 
 // partie app
@@ -32,4 +36,5 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(adminRoutes)
+
 app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT}`)})
