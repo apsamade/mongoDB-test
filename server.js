@@ -1,4 +1,7 @@
 const express = require('express')
+const request = require('http')
+const ip = require('ip');
+const address = ip.address();
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
@@ -30,10 +33,7 @@ app.set('view engine', 'hbs')
 app.use(express.static(path.dirname('public')))
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.get('/', (req, res) => {
-  const ip = req.connection.remoteAddress;
-  res.send(`Adresse IP du serveur : ${ip}`);
-});
+
 app.use(adminRoutes)
 
-app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT}`)})
+app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT} sur l'adress IP : $ ${address}`)})
