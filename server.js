@@ -31,6 +31,9 @@ app.set('view engine', 'hbs')
 app.use(express.static(path.dirname('public')))
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.get('/', (req, res) => {
+  const ip = req.connection.remoteAddress;
+  res.send(`Adresse IP du serveur : ${ip}`);
+});
 app.use(adminRoutes)
 
