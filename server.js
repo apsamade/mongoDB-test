@@ -9,12 +9,6 @@ const PORT = process.env.PORT || 3000
 
 
 // connect to mongoDB
-const dbURI = process.env.dbURI
-app.use((req, res, next) => {
-  const ip = req.ip || req.connection.remoteAddress;
-  req.clientIP = ip;
-  next();
-});
 mongoose.connect(`mongodb+srv://${dbURI}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
