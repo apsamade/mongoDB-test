@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000
 // connect to mongoDB
 const dbURI = process.env.dbURI
 
-mongoose.connect(dbURI, {
+mongoose.connect(`mongodb+srv://${dbURI}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
