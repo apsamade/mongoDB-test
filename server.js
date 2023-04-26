@@ -1,11 +1,12 @@
 const express = require('express')
+const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const path = require('path')
 const adminRoutes = require('./routes/admin')
 require('dotenv').config();
-const app = express();
 const PORT = process.env.PORT
+
 
 // connect to mongoDB
 const dbURI = process.env.dbURI
