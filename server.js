@@ -8,9 +8,9 @@ const app = express();
 const PORT = process.env.PORT
 
 // connect to mongoDB
-const dbURI = process.env.dbURI
+const DBURL = process.env.DBURL
 
-mongoose.connect('mongodb+srv://cours-test:7dtfj2xgKJXFLd1E@bouderga.el84tpe.mongodb.net/test_mongo?retryWrites=true&w=majority', {
+mongoose.connect(DBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
