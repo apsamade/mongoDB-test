@@ -47,7 +47,7 @@ exports.postUser = (req, res, next)=>{
 exports.getTestCo = (req, res, next)=>{
     res.render('testCo')
 }
-exports.postTestCo = (req, res, next)=>{
+exports.postTestCo = async (req, res, next)=>{
     const {email, mdp} = req.body;
     
     console.log('email : ' + email )    

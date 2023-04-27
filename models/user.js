@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Joi = require('joi');
 const validator = require("validator");
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt')
