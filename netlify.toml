@@ -1,0 +1,7 @@
+[build]
+  command = "npm start"
+  publish = "dist"
+  environment = { 
+    PORT = "${PORT}",
+    MONGODB_URI = "${MONGODB_URI}"
+  }
