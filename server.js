@@ -10,7 +10,7 @@ require('dotenv').config();
 
 // connect to mongoDB
 const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoDB-test";
-const PORT = process.env.PORT;
+let PORT;
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
