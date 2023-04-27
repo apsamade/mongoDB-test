@@ -7,10 +7,9 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const adminRoutes = require('./routes/admin')
 require('dotenv').config();
-
+const PORT = 80;
 // connect to mongoDB
 const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoDB-test";
-let PORT;
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
