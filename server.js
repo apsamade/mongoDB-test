@@ -18,7 +18,7 @@ mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
-    app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT} sur l'adress IP : ${address} `)})
+    app.listen(PORT, ()=>{console.log(`écoute sur le port ${PORT}`)})
     console.log('Connexion à la base de données réussie !');
   }).catch((err) => {
     console.log(`Echec de la connexion : ${err}`);
