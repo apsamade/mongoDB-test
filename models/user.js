@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const validator = require("validator");
-const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt')
 
 // ce schema sert a definir la structure de nos document
