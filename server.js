@@ -10,13 +10,13 @@ require('dotenv').config();
 
 // connect to mongoDB
 const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoDB-test";
-
+const PORT = process.env.PORT;
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
-    app.listen()
+    app.listen(PORT, ()=>{console.log(`écoute sur le port : ${PORT}`)})
     console.log('Connexion à la base de données réussie !');
   }).catch((err) => {
     console.log(`Echec de la connexion : ${err}`);
